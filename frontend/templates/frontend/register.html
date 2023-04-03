@@ -1,0 +1,20 @@
+{% extends "frontend/base.htm" %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'frontend/styles/login.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="vertical-center">
+        <div class="container col-sm-8" style="margin-top: 15px;">
+            <h3>Register</h3>
+            <form method="post" class="" action="api/register">
+                {% csrf_token %}
+                <input type="email" class="form-control" placeholder="Email" name="email"/>
+                <input type="password" class="form-control" placeholder="Password" name="password"/>
+                <input type="password" class="form-control" placeholder="Password" name="v_password"/>
+                <input type="submit" value="Login" class="btn btn-success"/>
+            </form>
+            <a href="/login">Already have an account?  Login here!</a>
+        </div>
+    </div>
+{% endblock %}
